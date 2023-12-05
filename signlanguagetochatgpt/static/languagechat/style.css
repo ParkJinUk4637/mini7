@@ -15,9 +15,11 @@ body{
     margin:auto;
     border-radius: 10px;
     border: none;
-    margin-left: 32%;
     margin-bottom:10%;
     background-color: #e1dede;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     &:hover {
         background: rgb(136, 136, 136);
         color: #fff;
@@ -96,4 +98,8 @@ span{
   
   #file {
     display: none;
+  }
+
+  #div2{
+    position:relative;
   }
