@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'NPSfontBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+h1,button,input{
+    font-family: 'NPSfontBold';
+    font-size: 20;
+    
+}
+
+a,h2,p {
+    font-family: 'NPSfontBold';
+    font-size: 15;
+    
+}

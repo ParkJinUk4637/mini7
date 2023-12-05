@@ -1,0 +1,48 @@
+{% load static %}
+{% block extrahead %}
+<script>
+    let idNum = 0;
+    function addFile(){
+        deepCopy();
+    }
+
+    function deepCopy()  {
+      // 'test' node 선택
+      const fileModule = document.getElementById('file-module-'+idNum);
+
+
+
+      // 노드 복사하기 (deep copy)
+      const newNode = fileModule.cloneNode(true);
+
+      console.log(newNode)
+
+      // 복사된 Node id 변경하기
+      idNum++;
+      newNode.id = 'file-module-' + idNum;
+
+      // 복사한 노드 붙여넣기
+      fileModule.after(newNode);
+    }
+</script>
+{% endblock %}
+<link rel="stylesheet" href="{% static 'languagechat/style.css' %}">
+<link rel="stylesheet" href="{% static 'languagechat/font.css' %}">
+<body>
+<h1 id="title">파일 업로드</h1>
+    <form action="chat" method="post" enctype="multipart/form-data">
+        <div id = "grid">
+        {% csrf_token %}
+        <span id="file-module-0">
+            <fieldset id="upload">
+                <label for="file">
+                    <div class="btn-upload">파일 업로드 하기</div>
+                </label>
+                <input id="file" name="files" type="file">
+            </fieldset>
+        </span>
+        <button id="add_button" onclick="addFile()" type="button">파일 추가 </button>
+    </div>
+    <div ><input id="submit" type="submit" value="ChatGPT에게 수어로 문의하기"></div>
+    </form>
+</body>
